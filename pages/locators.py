@@ -26,3 +26,8 @@ class ProductPageLocators:
     PRODUCT_PRICE = (By.CSS_SELECTOR, ".price_color")
     PRODUCT_NAME_IN_BASKET = (By.CSS_SELECTOR, ".alertinner strong")
     PRODUCT_PRICE_IN_BASKET = (By.CSS_SELECTOR, ".alertinner p strong")
+
+class BasketPageLocators:
+    GO_BASKET = (By.CSS_SELECTOR, ".btn-group a[href$='/basket/']")
+    BASKET_EMPTY = (By.CSS_SELECTOR, "#content_inner")
+    BASKET_ITEMS = (By.CSS_SELECTOR, ".basket-items")

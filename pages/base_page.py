@@ -6,6 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import math
 from .locators import BasePageLocators
 from .locators import MainPageLocators
+from .locators import BasketPageLocators
 
 
 class BasePage:
@@ -56,8 +57,16 @@ class BasePage:
         return True
 
     def go_to_login_page(self):
-            login_link = self.browser.find_element(*MainPageLocators.LOGIN_LINK)
-            login_link.click()
+        login_link = self.browser.find_element(*MainPageLocators.LOGIN_LINK)
+        login_link.click()
 
     def should_be_login_link(self):
-            assert self.is_element_present(*MainPageLocators.LOGIN_LINK), "Login link is not presented"
+        assert self.is_element_present(*MainPageLocators.LOGIN_LINK), "Login link is not presented"
+
+    def should_go_to_basket(self):
+        go_to_basket = self.browser.find_element(*BasketPageLocators.GO_BASKET)
+        go_to_basket.click()
+
+    def get_current_language(self):
+        language = self.browser.execute_script(
+            "return window.navigator.userLanguage || window.navigator.language")

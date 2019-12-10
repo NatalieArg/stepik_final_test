@@ -10,7 +10,7 @@ class ProductPage(BasePage):
         self.price_book = self.price.text
         add_button = self.browser.find_element(*ProductPageLocators.ADD_PRODUCT)  # добавляем в корзину
         add_button.click()
-        # self.solve_quiz_and_get_code()  # вводим код
+        self.solve_quiz_and_get_code()  # вводим код
         self.should_see_message_add_to_basket()  # проверяем что есть сообщение о добавлении товара в корзину
         self.should_see_price_of_product()  # проверяем что отображается нужная цена
 
