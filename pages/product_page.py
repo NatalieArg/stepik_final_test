@@ -5,9 +5,9 @@ from .locators import ProductPageLocators
 class ProductPage(BasePage):
     def should_add_product_to_basket(self):
         self.name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME)
-        self.name_book = self.name.text
+        self.name_book = self.name.text   # находим название книги
         self.price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE)
-        self.price_book = self.price.text
+        self.price_book = self.price.text   # находим цену книги
         add_button = self.browser.find_element(*ProductPageLocators.ADD_PRODUCT)  # добавляем в корзину
         add_button.click()
 

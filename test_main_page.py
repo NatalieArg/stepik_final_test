@@ -19,7 +19,7 @@ class TestLoginFromMainPage:
         page = MainPage(browser, link)  # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url адрес
         page.open()  # открываем страницу
         basket_page = BasketPage(browser, browser.current_url)
-        basket_page.should_go_to_basket()
-        basket_page.should_see_empty_basket()
+        basket_page.should_go_to_basket()  # переходим в корзину
+        basket_page.should_see_empty_basket()  # проверяем что корзина пуста
 
 

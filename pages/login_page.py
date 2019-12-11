@@ -25,10 +25,10 @@ class LoginPage(BasePage):
 
     def register_new_user(self, email, password):
         mail = self.browser.find_element(*LoginPageLocators.REG_EMAIL)
-        mail.send_keys(email)
+        mail.send_keys(email)  # заполняем email
         pswd1 = self.browser.find_element(*LoginPageLocators.REG_PASSWORD1)
         pswd2 = self.browser.find_element(*LoginPageLocators.REG_PASSWORD2)
-        pswd1.send_keys(password)
-        pswd2.send_keys(password)
+        pswd1.send_keys(password)  # заполняем пароль
+        pswd2.send_keys(password)  # заполняем  подтверждение пароля
         sbmt = self.browser.find_element(*LoginPageLocators.REG_SUBMIT)
-        sbmt.click()
+        sbmt.click()  # подтверждаем регистрацию
