@@ -22,3 +22,13 @@ class LoginPage(BasePage):
         assert self.is_element_present(*LoginPageLocators.REG_PASSWORD1), "Password field is not presented"
         assert self.is_element_present(*LoginPageLocators.REG_PASSWORD2), "Password conformation field is not presented"
         assert self.is_element_present(*LoginPageLocators.REG_SUBMIT), "Submit button is not presented"
+
+    def register_new_user(self, email, password):
+        mail = self.browser.find_element(*LoginPageLocators.REG_EMAIL)
+        mail.send_keys(email)
+        pswd1 = self.browser.find_element(*LoginPageLocators.REG_PASSWORD1)
+        pswd2 = self.browser.find_element(*LoginPageLocators.REG_PASSWORD2)
+        pswd1.send_keys(password)
+        pswd2.send_keys(password)
+        sbmt = self.browser.find_element(*LoginPageLocators.REG_SUBMIT)
+        sbmt.click()
