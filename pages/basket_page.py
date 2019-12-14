@@ -8,8 +8,8 @@ class BasketPage(BasePage):
         lang = self.get_current_language()
         text = self.browser.find_element(*BasketPageLocators.BASKET_EMPTY).text
         if lang == 'en':
-            assert text == "Your basket is empty", f"Excepted 'Your basket is empty',got {text}"
+            assert text == "Your basket is empty. Continue shopping", f"Excepted 'Your basket is empty',got {text}"
         elif lang == 'ru':
-            assert text == "Ваша корзина пуста", f"Excepted 'Ваша корзина пуста',got {text}"
+            assert text == "Ваша корзина пуста Продолжить покупки", f"Excepted 'Ваша корзина пуста',got {text}"
 
 

@@ -70,6 +70,7 @@ class BasePage:
     def get_current_language(self):
         language = self.browser.execute_script(
             "return window.navigator.userLanguage || window.navigator.language")
+        return language
 
     def should_be_authorized_user(self):
         assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
